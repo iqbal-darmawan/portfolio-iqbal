@@ -287,7 +287,7 @@ export default function Home() {
               icon={<SchoolIcon />}
             >
               <h3 className="vertical-timeline-element-title font-bold text-xl">
-                Advanced Diploma of Computer Engineering
+                Associate Degree of Computer Engineering
               </h3>
               <h4 className="vertical-timeline-element-subtitle">
                 Politeknik Elektronika Negeri Surabaya
