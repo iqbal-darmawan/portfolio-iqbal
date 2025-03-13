@@ -2,32 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 39 70% 95%; /* Warna krem untuk background */
+    --foreground: 222.2 84% 4.9%; /* Warna teks utama */
+    --card: 39 70% 95%; /* Warna krem untuk kartu */
+    --card-foreground: 222.2 84% 4.9%; /* Warna teks pada kartu */
+    --popover: 39 70% 95%; /* Warna krem untuk popover */
+    --popover-foreground: 222.2 84% 4.9%; /* Warna teks pada popover */
+    --primary: 39 90% 80%; /* Warna krem utama */
+    --primary-foreground: 222.2 84% 4.9%; /* Warna teks pada elemen utama */
+    --secondary: 39 70% 90%; /* Warna krem lebih terang */
+    --secondary-foreground: 222.2 84% 4.9%; /* Warna teks pada elemen sekunder */
+    --muted: 39 70% 88%; /* Warna krem yang lebih halus */
+    --muted-foreground: 222.2 20% 20%; /* Warna teks pada elemen muted */
+    --accent: 39 80% 75%; /* Warna aksen krem */
+    --accent-foreground: 222.2 84% 4.9%; /* Warna teks pada aksen */
+    --destructive: 0 84.2% 60.2%; /* Warna merah untuk elemen destruktif */
+    --destructive-foreground: 210 40% 98%; /* Warna teks pada elemen destruktif */
+    --border: 39 60% 85%; /* Warna krem untuk border */
+    --input: 39 60% 85%; /* Warna krem untuk input */
+    --ring: 222.2 84% 4.9%; /* Warna untuk efek ring */
+    --radius: 0.5rem;
+    --chart-1: 39 70% 75%; /* Warna krem untuk chart 1 */
+    --chart-2: 173 58% 39%; /* Warna untuk chart 2 */
+    --chart-3: 197 37% 24%; /* Warna untuk chart 3 */
+    --chart-4: 43 74% 66%; /* Warna untuk chart 4 */
+    --chart-5: 27 87% 67%; /* Warna untuk chart 5 */
+  }  
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (prefers-color-scheme: light) {
+  .light-mode-before::before {
+    background-color: rgb(14 165 233 / var(--tw-text-opacity));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .light-mode-before::before {
+    background-color: white; /* Sesuaikan dengan tema dark */
   }
 }
